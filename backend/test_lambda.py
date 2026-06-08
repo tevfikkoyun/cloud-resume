@@ -28,4 +28,4 @@ class TestVisitorCounter(TestCase):
             'Attributes': {'Count': 5}
         }
         result = lambda_handler({}, {})
-        self.assertEqual(result['headers']['Access-Control-Allow-Origin'], '*')
+        self.assertEqual(result['headers']['Access-Control-Allow-Origin'], '*') 
