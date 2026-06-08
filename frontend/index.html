@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tevfik Koyun – Network & Cloud Engineer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --navy:   #0a1628;
+      --blue:   #1a3a6b;
+      --accent: #2e7de9;
+      --teal:   #0fbfbf;
+      --light:  #e8eef8;
+      --muted:  #6b7fa3;
+      --white:  #ffffff;
+      --card:   #111e35;
+      --border: rgba(46,125,233,0.18);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--navy);
+      color: var(--light);
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+
+    /* ── HEADER ── */
+    header {
+      background: linear-gradient(135deg, #0d1f3c 0%, #0a1628 60%, #071220 100%);
+      border-bottom: 1px solid var(--border);
+      padding: 52px 0 40px;
+      position: relative;
+      overflow: hidden;
+    }
+    header::before {
+      content: '';
+      position: absolute;
+      top: -80px; right: -80px;
+      width: 380px; height: 380px;
+      background: radial-gradient(circle, rgba(46,125,233,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    header::after {
+      content: '';
+      position: absolute;
+      bottom: -60px; left: -40px;
+      width: 260px; height: 260px;
+      background: radial-gradient(circle, rgba(15,191,191,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .header-inner {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 40px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .name {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: clamp(2.4rem, 5vw, 3.6rem);
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      background: linear-gradient(120deg, #ffffff 0%, #a8c4f0 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .title {
+      font-family: 'Syne', sans-serif;
+      font-weight: 600;
+      font-size: 1.05rem;
+      color: var(--teal);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-top: 8px;
+    }
+
+    .contact-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 20px;
+      margin-top: 20px;
+    }
+    .contact-row a, .contact-row span {
+      font-size: 0.875rem;
+      color: var(--muted);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 0.2s;
+    }
+    .contact-row a:hover { color: var(--accent); }
+    .contact-row .dot { color: var(--border); }
+
+    /* ── CERT BADGES ── */
+    .badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+    }
+    .badge {
+      background: rgba(46,125,233,0.12);
+      border: 1px solid rgba(46,125,233,0.3);
+      border-radius: 6px;
+      padding: 6px 14px;
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: #7eb8f7;
+      letter-spacing: 0.04em;
+    }
+    .badge.teal {
+      background: rgba(15,191,191,0.1);
+      border-color: rgba(15,191,191,0.3);
+      color: #5ee0e0;
+    }
+
+    /* ── LAYOUT ── */
+    main {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 40px 40px 60px;
+    }
+
+    /* ── SECTION ── */
+    section { margin-bottom: 40px; }
+
+    .section-label {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* ── SUMMARY ── */
+    .summary-text {
+      font-size: 0.95rem;
+      color: #aabbd4;
+      line-height: 1.75;
+      max-width: 720px;
+    }
+
+    /* ── SKILLS TABLE ── */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+    .skill-row {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 12px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .skill-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--teal);
+    }
+    .skill-value {
+      font-size: 0.83rem;
+      color: #9bafc8;
+      line-height: 1.5;
+    }
+
+    /* ── EXPERIENCE ── */
+    .job { margin-bottom: 28px; }
+
+    .job-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 4px;
+      margin-bottom: 4px;
+    }
+    .job-title {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--white);
+    }
+    .job-dates {
+      font-size: 0.8rem;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+    .job-company {
+      font-size: 0.85rem;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+
+    .sub-section {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin: 12px 0 6px;
+    }
+
+    ul.bullets {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    ul.bullets li {
+      font-size: 0.875rem;
+      color: #9bafc8;
+      padding-left: 18px;
+      position: relative;
+      line-height: 1.55;
+    }
+    ul.bullets li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-size: 0.75rem;
+      top: 2px;
+    }
+
+    /* ── PROJECT CARD ── */
+    .project-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent);
+      border-radius: 8px;
+      padding: 18px 20px;
+      margin-bottom: 16px;
+    }
+    .project-title {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--white);
+      margin-bottom: 4px;
+    }
+    .project-sub {
+      font-size: 0.78rem;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+
+    /* ── EDUCATION ── */
+    .edu-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 4px;
+    }
+    .edu-degree {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--white);
+    }
+    .edu-school {
+      font-size: 0.85rem;
+      color: var(--accent);
+      margin-top: 3px;
+    }
+
+    /* ── VISITOR COUNTER ── */
+    .visitor-bar {
+      text-align: center;
+      padding: 20px;
+      border-top: 1px solid var(--border);
+      margin-top: 40px;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+    #visitor-count {
+      color: var(--teal);
+      font-weight: 600;
+      font-family: 'Syne', sans-serif;
+    }
+
+    @media (max-width: 600px) {
+      .header-inner, main { padding: 0 20px; }
+      header { padding: 36px 0 28px; }
+      .skills-grid { grid-template-columns: 1fr; }
+      .job-header { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="name">Tevfik Koyun</div>
+    <div class="title">Network &amp; Cloud Infrastructure Engineer</div>
+
+    <div class="contact-row">
+      <span>📍 Totowa, NJ</span>
+      <span class="dot">·</span>
+      <a href="mailto:tevfikkoyun@email.com">tevfikkoyun@email.com</a>
+      <span class="dot">·</span>
+      <a href="https://linkedin.com/in/tevfikkoyun" target="_blank">linkedin.com/in/tevfikkoyun</a>
+      <span class="dot">·</span>
+      <a href="https://github.com/tevfikkoyun" target="_blank">github.com/tevfikkoyun</a>
+    </div>
+
+    <div class="badges">
+      <span class="badge">Cisco CCNA</span>
+      <span class="badge">AWS SAA-C03</span>
+      <span class="badge teal">B.S. Computer Science · UCF</span>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- SUMMARY -->
+  <section>
+    <div class="section-label">Profile</div>
+    <p class="summary-text">
+      IT professional with a strong foundation across network engineering, infrastructure, and systems
+      administration. I enjoy working close to the metal — designing networks, building out physical
+      spaces, and making sure everything actually runs. Certified in Cisco CCNA and AWS Solutions
+      Architect – Associate, with a B.S. in Computer Science from UCF. Lately I've been focused on
+      bridging my infrastructure background with cloud, building the kind of hands-on AWS experience
+      that complements what I already know.
+    </p>
+  </section>
+
+  <!-- SKILLS -->
+  <section>
+    <div class="section-label">Technical Skills</div>
+    <div class="skills-grid">
+      <div class="skill-row">
+        <span class="skill-label">Networking</span>
+        <span class="skill-value">Cisco IOS · VLAN Design · Inter-VLAN Routing · STP/RSTP · WLC · 802.11 Wi-Fi · TCP/IP</span>
+      </div>
+      <div class="skill-row">
+        <span class="skill-label">Cloud (AWS)</span>
+        <span class="skill-value">S3 · CloudFront · EC2 · IAM · Lambda · DynamoDB · API Gateway · Route 53 · VPC</span>
+      </div>
+      <div class="skill-row">
+        <span class="skill-label">Security & Physical</span>
+        <span class="skill-value">IP Camera Systems · Access Control · Network Segmentation · ACLs · UPS Infrastructure</span>
+      </div>
+      <div class="skill-row">
+        <span class="skill-label">Systems</span>
+        <span class="skill-value">Active Directory · Group Policy · Windows Server · Linux · Google Workspace Admin</span>
+      </div>
+      <div class="skill-row">
+        <span class="skill-label">Development</span>
+        <span class="skill-value">Python · PHP · MySQL · phpMyAdmin · REST APIs · HTML/CSS · JavaScript</span>
+      </div>
+      <div class="skill-row">
+        <span class="skill-label">Hardware & Infra</span>
+        <span class="skill-value">Cisco Switches · Core Switches · Server Rack Buildouts · Structured Cabling · Data Room Design</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section>
+    <div class="section-label">Experience</div>
+
+    <div class="job">
+      <div class="job-header">
+        <span class="job-title">Network &amp; IT Infrastructure Engineer</span>
+        <span class="job-dates">20XX – Present</span>
+      </div>
+      <div class="job-company">Company Name · NJ/NY Area</div>
+
+      <div class="sub-section">Network Infrastructure</div>
+      <ul class="bullets">
+        <li>Designed and managed the full network infrastructure for a mid-size enterprise environment across multiple sites</li>
+        <li>Built out a multi-VLAN architecture from scratch — separating camera, wireless, and data traffic with dedicated IP schemes and inter-VLAN policies per segment</li>
+        <li>Led a network redesign and upgrade initiative, improving performance, redundancy, and long-term scalability</li>
+        <li>Deployed and configured Cisco switches across sites, including core switch installations with full L2/L3 setup</li>
+        <li>Rolled out a large fleet of Access Points integrated with WLC — handled RF planning, configuration, and ongoing optimization</li>
+        <li>Set up and operated the Wireless LAN Controller end-to-end, from initial provisioning to policy management</li>
+      </ul>
+
+      <div class="sub-section">Physical Security Systems</div>
+      <ul class="bullets">
+        <li>Deployed and maintained a large-scale IP camera system — handled IP addressing, VLAN assignment, and all ongoing changes across the fleet</li>
+        <li>Built and maintained the camera server environment; consolidated servers to reduce footprint while keeping everything fully operational</li>
+        <li>Installed UPS systems to ensure continuous power for security infrastructure</li>
+        <li>Implemented smart door and electronic access control across multiple facilities</li>
+      </ul>
+
+      <div class="sub-section">Data Center & Systems</div>
+      <ul class="bullets">
+        <li>Planned and built out multiple server rooms from the ground up — rack layout, structured cabling, hardware installation, and power infrastructure</li>
+        <li>Administered Active Directory across the organization, including user and group management, GPO policies, and security hardening</li>
+        <li>Managed Google Workspace Admin for provisioning, device management, and org-wide security settings</li>
+        <li>Contributed to a facility-wide LED infrastructure upgrade project</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section>
+    <div class="section-label">Projects</div>
+
+    <div class="project-card">
+      <div class="project-title">Cloud Resume Challenge</div>
+      <div class="project-sub">AWS · S3 · CloudFront · Lambda · DynamoDB · API Gateway · Terraform · GitHub Actions</div>
+      <ul class="bullets">
+        <li>Built and deployed a serverless resume website on AWS — static frontend hosted on S3, served via CloudFront with HTTPS</li>
+        <li>Implemented visitor counter using API Gateway → Lambda (Python) → DynamoDB architecture</li>
+        <li>Provisioned all infrastructure as code using Terraform; automated deployments via GitHub Actions CI/CD pipeline</li>
+      </ul>
+    </div>
+
+    <div class="project-card">
+      <div class="project-title">Veterans Cemetery Database & Admin Web System</div>
+      <div class="project-sub">UCF Capstone · Back-End Developer · MySQL · phpMyAdmin · PHP · REST API · OCR · GPS Navigation</div>
+      <ul class="bullets">
+        <li>Designed and maintained a MySQL relational database to store soldier records, GPS coordinates of gravesites, and headstone data</li>
+        <li>Built an administrative web application for authorized database management — create, update, delete records</li>
+        <li>Integrated OCR and GPS/navigation APIs supporting both online and offline veteran lookup and headstone navigation</li>
+        <li>Migrated legacy documentation and database structures from prior team onto a new UCF development server</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section>
+    <div class="section-label">Education</div>
+    <div class="edu-row" style="margin-bottom: 16px;">
+      <div>
+        <div class="edu-degree">Bachelor of Science – Computer Science</div>
+        <div class="edu-school">University of Central Florida (UCF) · Orlando, FL</div>
+      </div>
+      <span class="job-dates">Graduated 20XX</span>
+    </div>
+    <div class="edu-row">
+      <div>
+        <div class="edu-degree">Associate in Science – General Science</div>
+        <div class="edu-school">Bergen Community College · Paramus, NJ</div>
+      </div>
+      <span class="job-dates">2016 – 2019</span>
+    </div>
+  </section>
+
+  <!-- VISITOR COUNTER -->
+  <div class="visitor-bar">
+    👁 This page has been visited <span id="visitor-count">—</span> times
+  </div>
+
+</main>
+
+<script>
+  // Visitor counter — will connect to AWS Lambda + DynamoDB later
+  async function updateCounter() {
+    try {
+      const res = await fetch('https://u2w5xueqs1.execute-api.us-east-1.amazonaws.com/count', { method: 'POST' });
+      const data = await res.json();
+      document.getElementById('visitor-count').textContent = data.count.toLocaleString();
+    } catch {
+      document.getElementById('visitor-count').textContent = '...';
+    }
+  }
+  updateCounter();
+</script>
+
+</body>
+</html>
