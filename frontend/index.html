@@ -3,6 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Tevfik Koyun — Infrastructure &amp; Cloud Engineer based in New Jersey. AWS SAA-C03, Cisco CCNA certified. Skilled in Terraform, Kubernetes, Docker, and AWS EKS."/>
+  <meta property="og:title" content="Tevfik Koyun – Infrastructure &amp; Cloud Engineer"/>
+  <meta property="og:type" content="website"/>
+  <link rel="icon" href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'&gt;&lt;text y='.9em' font-size='90'&gt;⚙️&lt;/text&gt;&lt;/svg&gt;"/>
   <title>Tevfik Koyun – Infrastructure & Cloud Engineer</title>
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
   <style>
@@ -289,6 +293,23 @@
     }
     #visitor-count { color: var(--teal); font-weight: 600; }
 
+    .btn-download {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(46,125,233,0.12);
+      border: 1px solid rgba(46,125,233,0.35);
+      border-radius: 5px;
+      padding: 5px 14px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: #7eb8f7;
+      text-decoration: none;
+      margin-top: 12px;
+      transition: background 0.2s;
+    }
+    .btn-download:hover { background: rgba(46,125,233,0.22); color: #fff; }
+
     @media (max-width: 600px) {
       .header-inner, main { padding: 0 20px; }
       header { padding: 28px 0 20px; }
@@ -308,18 +329,20 @@
       <span>·</span>
       <a href="mailto:tevfikkoyun97@gmail.com">tevfikkoyun97@gmail.com</a>
       <span>·</span>
-      <a href="https://www.linkedin.com/in/tevfik-koyun/" target="_blank">linkedin.com/in/tevfik-koyun</a>
+      <a href="https://www.linkedin.com/in/tevfik-koyun/" target="_blank" rel="noopener noreferrer">linkedin.com/in/tevfik-koyun</a>
       <span>·</span>
-      <a href="https://github.com/tevfikkoyun" target="_blank">github.com/tevfikkoyun</a>
+      <a href="https://github.com/tevfikkoyun" target="_blank" rel="noopener noreferrer">github.com/tevfikkoyun</a>
     </div>
 
     <div class="cert-strip">
-      <span class="cert-strip-label">Certifications</span>
+      <span class="cert-strip-label">Certifications &amp; Credentials</span>
       <span class="badge">Cisco CCNA</span>
       <span class="badge">AWS SAA-C03</span>
       <span class="badge">IBM AI Fundamentals</span>
+      <span class="cert-strip-label" style="margin-left:8px;">Education</span>
       <span class="badge teal">B.S. Computer Science · UCF</span>
     </div>
+    <a href="https://tevfik-koyun-resume.s3.amazonaws.com/Tevfik_Koyun_Resume.pdf" target="_blank" rel="noopener noreferrer" class="btn-download">⬇ Download Resume PDF</a>
   </div>
 </header>
 
@@ -329,7 +352,7 @@
   <section>
     <div class="section-label">Profile</div>
     <p class="summary-text">
-      IT professional with 4.5+ years of hands-on infrastructure experience across network engineering, cloud, and systems administration. Strong foundation in physical infrastructure — multi-VLAN network design, IP camera systems, data room buildouts — combined with a growing cloud and DevOps skill set built through deliberate project work. Certified in Cisco CCNA and AWS Solutions Architect – Associate, with a B.S. in Computer Science from UCF. Recently focused on containerization, Kubernetes orchestration, and infrastructure as code, deploying production-style workloads on AWS using Terraform, Docker, and EKS.
+      IT professional with 4.5+ years of hands-on infrastructure experience across network engineering, cloud, and systems administration. Strong foundation in physical infrastructure — multi-VLAN network design, IP camera systems, data room buildouts — complemented by hands-on cloud and DevOps engineering experience developed through end-to-end AWS projects. Certified in Cisco CCNA and AWS Solutions Architect – Associate, with a B.S. in Computer Science from UCF. Hands-on experience includes containerization, Kubernetes orchestration, and infrastructure as code, deploying production-style workloads on AWS using Terraform, Docker, and EKS.
     </p>
   </section>
 
@@ -372,25 +395,26 @@
         <span class="job-title">Network & IT Infrastructure Engineer</span>
         <span class="job-dates">2022 – 2026</span>
       </div>
-      <div class="job-company">Confidential · NJ/NY Area</div>
+      <div class="job-company">Private Education Organization · New Jersey</div>
       <ul class="bullets">
-        <li>Designed and managed full network infrastructure for a 500–750 user enterprise environment across multiple sites — VLAN segmentation, inter-VLAN routing, and site connectivity</li>
-        <li>Deployed and configured Cisco switches (including 2 core switches) with full L2/L3 setup; rolled out ~50 Access Points integrated with WLC — RF planning, configuration, and optimization</li>
-        <li>Built and maintained a large-scale IP camera system (~150 cameras) — IP addressing, VLAN assignment, and server consolidation across facilities</li>
-        <li>Planned and built 4 server rooms from the ground up — rack layout, structured cabling, hardware installation, and power infrastructure</li>
+        <li>Contributed to the design and deployment of network infrastructure for a 500–750 user enterprise environment across multiple sites; led ongoing maintenance and day-to-day operations post-deployment</li>
+        <li>Deployed and configured Cisco switches (including 2 core switches) with full L2/L3 setup; rolled out ~50 Access Points integrated with WLC — RF planning, configuration, and ongoing optimization</li>
+        <li>Maintained a large-scale IP camera system (~150 cameras) — IP addressing, VLAN assignment, and consolidated camera servers to reduce infrastructure footprint</li>
+        <li>Participated in planning and building 4 server rooms from the ground up — rack layout, structured cabling, hardware installation, and power infrastructure</li>
         <li>Administered Active Directory (user/group management, GPO, security hardening) and Google Workspace for org-wide provisioning and device management</li>
+        <li>Installed UPS systems and implemented smart door and electronic access control across multiple facilities</li>
       </ul>
     </div>
   </section>
 
   <!-- PROJECTS -->
   <section>
-    <div class="section-label">Projects — <a href="https://github.com/tevfikkoyun" target="_blank" style="color:var(--accent);font-size:0.75rem;font-weight:400;text-decoration:none;letter-spacing:0;">All projects documented with dependency map at github.com/tevfikkoyun</a></div>
+    <div class="section-label">Projects — <a href="https://github.com/tevfikkoyun" target="_blank" rel="noopener noreferrer" style="color:var(--accent);font-size:0.75rem;font-weight:400;text-decoration:none;letter-spacing:0;">All projects documented with dependency map at github.com/tevfikkoyun</a></div>
 
     <div class="project-item">
       <div class="project-header">
-        <span class="project-title">Fullstack K8s AWS — Final Master Project</span>
-        <a href="https://github.com/tevfikkoyun/fullstack-k8s-aws" target="_blank" class="project-link">↗ GitHub</a>
+        <span class="project-title">AWS EKS Full-Stack Platform</span>
+        <a href="https://github.com/tevfikkoyun/fullstack-k8s-aws" target="_blank" rel="noopener noreferrer" class="project-link">↗ GitHub</a>
       </div>
       <div class="project-sub">Terraform · AWS EKS · Docker · Kubernetes · ECR · GitHub Actions · Prometheus · Grafana</div>
       <div class="project-desc">Provisioned EKS cluster with Terraform (VPC, IAM, ECR, OIDC, EBS CSI, ALB Ingress); deployed full-stack app via K8s manifests (Deployments, Ingress, PVC, HPA, Probes); GitHub Actions CI/CD to ECR on every commit; Prometheus + Grafana with custom alert rules — real-time alert firing demonstrated under load.</div>
@@ -399,7 +423,7 @@
     <div class="project-item">
       <div class="project-header">
         <span class="project-title">Hybrid Infrastructure Platform</span>
-        <a href="https://github.com/tevfikkoyun/hybrid-infra-platform" target="_blank" class="project-link">↗ GitHub</a>
+        <a href="https://github.com/tevfikkoyun/hybrid-infra-platform" target="_blank" rel="noopener noreferrer" class="project-link">↗ GitHub</a>
       </div>
       <div class="project-sub">Terraform · AWS VPC · EC2 · RDS MySQL · Node.js · CloudWatch · SNS · GitHub Actions</div>
       <div class="project-desc">Multi-tier VPC with public/private subnets across two AZs, NAT Gateway, bastion host, RDS MySQL in private subnet; Node.js REST API on EC2; CloudWatch dashboards with SNS alerts; GitHub Actions CI/CD.</div>
@@ -408,16 +432,16 @@
     <div class="project-item">
       <div class="project-header">
         <span class="project-title">Kubernetes Task Manager</span>
-        <a href="https://github.com/tevfikkoyun/kubernetes-task-manager" target="_blank" class="project-link">↗ GitHub</a>
+        <a href="https://github.com/tevfikkoyun/kubernetes-task-manager" target="_blank" rel="noopener noreferrer" class="project-link">↗ GitHub</a>
       </div>
       <div class="project-sub">Kubernetes · Docker · Ingress · ConfigMap · Secret · PVC · HPA · Probes</div>
-      <div class="project-desc">Full-stack app (React + Node.js + PostgreSQL) migrated from Docker Compose to production-grade K8s manifests — all core concepts applied. Fulfills the Kubernetes Resume Challenge.</div>
+      <div class="project-desc">Full-stack app (React + Node.js + PostgreSQL) migrated from Docker Compose to production-style K8s manifests — all core concepts applied. Fulfills the Kubernetes Resume Challenge.</div>
     </div>
 
     <div class="project-item">
       <div class="project-header">
         <span class="project-title">Fullstack AWS Deployment</span>
-        <a href="https://github.com/tevfikkoyun/fullstack-aws-deployment" target="_blank" class="project-link">↗ GitHub</a>
+        <a href="https://github.com/tevfikkoyun/fullstack-aws-deployment" target="_blank" rel="noopener noreferrer" class="project-link">↗ GitHub</a>
       </div>
       <div class="project-sub">Terraform · EC2 · ECR · VPC · IAM · Docker Compose · GitHub Actions</div>
       <div class="project-desc">Terraform-provisioned AWS infrastructure; Dockerized app on EC2 pulling from ECR; GitHub Actions CI/CD pushing to Docker Hub and ECR in parallel.</div>
@@ -426,8 +450,8 @@
     <div class="project-item">
       <div class="project-header">
         <span class="project-title">Cloud Resume Challenge</span>
-        <a href="https://github.com/tevfikkoyun/cloud-resume" target="_blank" class="project-link">↗ GitHub</a>
-        <a href="https://d108sjaxcdd5os.cloudfront.net/" target="_blank" class="project-link">↗ Live</a>
+        <a href="https://github.com/tevfikkoyun/cloud-resume" target="_blank" rel="noopener noreferrer" class="project-link">↗ GitHub</a>
+        <a href="https://d108sjaxcdd5os.cloudfront.net/" target="_blank" rel="noopener noreferrer" class="project-link">↗ Live</a>
       </div>
       <div class="project-sub">S3 · CloudFront · Lambda · DynamoDB · API Gateway · Terraform · GitHub Actions</div>
       <div class="project-desc">Serverless resume on AWS — S3 + CloudFront HTTPS, visitor counter via API Gateway → Lambda (Python) → DynamoDB; all infrastructure as Terraform code, automated via GitHub Actions.</div>
