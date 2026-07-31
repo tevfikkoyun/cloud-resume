@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Tevfik Koyun – Network & Cloud Engineer</title>
+  <title>Tevfik Koyun – Infrastructure & Cloud Engineer</title>
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
   <style>
     :root {
@@ -28,43 +28,23 @@
       line-height: 1.6;
     }
 
-    /* ── HEADER ── */
+    /* HEADER */
     header {
       background: linear-gradient(135deg, #0d1f3c 0%, #0a1628 60%, #071220 100%);
       border-bottom: 1px solid var(--border);
-      padding: 52px 0 40px;
-      position: relative;
-      overflow: hidden;
-    }
-    header::before {
-      content: '';
-      position: absolute;
-      top: -80px; right: -80px;
-      width: 380px; height: 380px;
-      background: radial-gradient(circle, rgba(46,125,233,0.12) 0%, transparent 70%);
-      pointer-events: none;
-    }
-    header::after {
-      content: '';
-      position: absolute;
-      bottom: -60px; left: -40px;
-      width: 260px; height: 260px;
-      background: radial-gradient(circle, rgba(15,191,191,0.08) 0%, transparent 70%);
-      pointer-events: none;
+      padding: 36px 0 28px;
     }
 
     .header-inner {
       max-width: 860px;
       margin: 0 auto;
       padding: 0 40px;
-      position: relative;
-      z-index: 1;
     }
 
     .name {
       font-family: 'Syne', sans-serif;
       font-weight: 800;
-      font-size: clamp(2.4rem, 5vw, 3.6rem);
+      font-size: 2.4rem;
       letter-spacing: -0.02em;
       line-height: 1.1;
       background: linear-gradient(120deg, #ffffff 0%, #a8c4f0 100%);
@@ -76,72 +56,76 @@
     .title {
       font-family: 'Syne', sans-serif;
       font-weight: 600;
-      font-size: 1.05rem;
+      font-size: 0.95rem;
       color: var(--teal);
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      margin-top: 8px;
+      margin-top: 6px;
     }
 
     .contact-row {
       display: flex;
       flex-wrap: wrap;
-      gap: 6px 20px;
-      margin-top: 20px;
+      gap: 4px 16px;
+      margin-top: 14px;
     }
     .contact-row a, .contact-row span {
-      font-size: 0.875rem;
+      font-size: 0.85rem;
       color: var(--muted);
       text-decoration: none;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      transition: color 0.2s;
     }
     .contact-row a:hover { color: var(--accent); }
-    .contact-row .dot { color: var(--border); }
 
-    /* ── CERT BADGES ── */
-    .badges {
+    /* CERT STRIP under contact */
+    .cert-strip {
+      margin-top: 14px;
+      padding-top: 12px;
+      border-top: 1px solid var(--border);
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 24px;
+      gap: 6px;
+      align-items: center;
+    }
+    .cert-strip-label {
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-right: 4px;
     }
     .badge {
-      background: rgba(46,125,233,0.12);
-      border: 1px solid rgba(46,125,233,0.3);
-      border-radius: 6px;
-      padding: 6px 14px;
-      font-size: 0.78rem;
+      background: rgba(46,125,233,0.1);
+      border: 1px solid rgba(46,125,233,0.25);
+      border-radius: 4px;
+      padding: 3px 10px;
+      font-size: 0.75rem;
       font-weight: 500;
       color: #7eb8f7;
-      letter-spacing: 0.04em;
     }
     .badge.teal {
-      background: rgba(15,191,191,0.1);
-      border-color: rgba(15,191,191,0.3);
+      background: rgba(15,191,191,0.08);
+      border-color: rgba(15,191,191,0.25);
       color: #5ee0e0;
     }
 
-    /* ── LAYOUT ── */
+    /* LAYOUT */
     main {
       max-width: 860px;
       margin: 0 auto;
-      padding: 40px 40px 60px;
+      padding: 28px 40px 48px;
     }
 
-    /* ── SECTION ── */
-    section { margin-bottom: 40px; }
+    section { margin-bottom: 26px; }
 
     .section-label {
       font-family: 'Syne', sans-serif;
       font-weight: 700;
-      font-size: 0.7rem;
-      letter-spacing: 0.2em;
+      font-size: 0.68rem;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
       color: var(--accent);
-      margin-bottom: 16px;
+      margin-bottom: 12px;
       display: flex;
       align-items: center;
       gap: 10px;
@@ -153,77 +137,66 @@
       background: var(--border);
     }
 
-    /* ── SUMMARY ── */
+    /* SUMMARY */
     .summary-text {
-      font-size: 0.95rem;
+      font-size: 0.88rem;
       color: #aabbd4;
-      line-height: 1.75;
-      max-width: 720px;
+      line-height: 1.7;
     }
 
-    /* ── SKILLS TABLE ── */
+    /* SKILLS GRID */
     .skills-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 10px;
+      gap: 8px;
     }
     .skill-row {
       background: var(--card);
       border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 12px 16px;
+      border-radius: 6px;
+      padding: 9px 14px;
       display: flex;
       flex-direction: column;
-      gap: 4px;
+      gap: 3px;
     }
     .skill-label {
-      font-size: 0.7rem;
+      font-size: 0.68rem;
       font-weight: 600;
       letter-spacing: 0.1em;
       text-transform: uppercase;
       color: var(--teal);
     }
     .skill-value {
-      font-size: 0.83rem;
+      font-size: 0.8rem;
       color: #9bafc8;
-      line-height: 1.5;
+      line-height: 1.45;
     }
 
-    /* ── EXPERIENCE ── */
-    .job { margin-bottom: 28px; }
-
+    /* EXPERIENCE */
+    .job { margin-bottom: 20px; }
     .job-header {
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
       flex-wrap: wrap;
       gap: 4px;
-      margin-bottom: 4px;
+      margin-bottom: 2px;
     }
     .job-title {
       font-family: 'Syne', sans-serif;
       font-weight: 700;
-      font-size: 1rem;
+      font-size: 0.95rem;
       color: var(--white);
     }
     .job-dates {
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       color: var(--muted);
       white-space: nowrap;
     }
     .job-company {
-      font-size: 0.85rem;
+      font-size: 0.83rem;
       color: var(--accent);
-      margin-bottom: 12px;
-    }
-
-    .sub-section {
-      font-size: 0.72rem;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--teal);
-      margin: 12px 0 6px;
+      margin-bottom: 10px;
     }
 
     ul.bullets {
@@ -231,86 +204,95 @@
       padding: 0;
       display: flex;
       flex-direction: column;
-      gap: 5px;
+      gap: 4px;
     }
     ul.bullets li {
-      font-size: 0.875rem;
+      font-size: 0.855rem;
       color: #9bafc8;
-      padding-left: 18px;
+      padding-left: 16px;
       position: relative;
-      line-height: 1.55;
+      line-height: 1.5;
     }
     ul.bullets li::before {
       content: '▸';
       position: absolute;
       left: 0;
       color: var(--accent);
-      font-size: 0.75rem;
-      top: 2px;
+      font-size: 0.72rem;
+      top: 3px;
     }
 
-    /* ── PROJECT CARD ── */
-    .project-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-left: 3px solid var(--accent);
-      border-radius: 8px;
-      padding: 18px 20px;
-      margin-bottom: 16px;
+    /* PROJECTS */
+    .project-item {
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .project-item:last-child { border-bottom: none; }
+    .project-header {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 2px;
     }
     .project-title {
       font-family: 'Syne', sans-serif;
       font-weight: 700;
-      font-size: 0.95rem;
+      font-size: 0.88rem;
       color: var(--white);
-      margin-bottom: 4px;
     }
-    .project-sub {
-      font-size: 0.78rem;
+    .project-link {
+      font-size: 0.75rem;
       color: var(--accent);
-      margin-bottom: 10px;
+      text-decoration: none;
+    }
+    .project-link:hover { text-decoration: underline; }
+    .project-sub {
+      font-size: 0.75rem;
+      color: var(--muted);
+      margin-bottom: 3px;
+    }
+    .project-desc {
+      font-size: 0.835rem;
+      color: #9bafc8;
+      line-height: 1.5;
     }
 
-    /* ── EDUCATION ── */
+    /* EDUCATION */
     .edu-row {
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
       flex-wrap: wrap;
       gap: 4px;
+      margin-bottom: 10px;
     }
     .edu-degree {
       font-family: 'Syne', sans-serif;
       font-weight: 700;
-      font-size: 1rem;
+      font-size: 0.88rem;
       color: var(--white);
     }
     .edu-school {
-      font-size: 0.85rem;
+      font-size: 0.82rem;
       color: var(--accent);
-      margin-top: 3px;
+      margin-top: 2px;
     }
 
-    /* ── VISITOR COUNTER ── */
     .visitor-bar {
       text-align: center;
-      padding: 20px;
+      padding: 14px;
       border-top: 1px solid var(--border);
-      margin-top: 40px;
-      font-size: 0.8rem;
+      margin-top: 28px;
+      font-size: 0.75rem;
       color: var(--muted);
     }
-    #visitor-count {
-      color: var(--teal);
-      font-weight: 600;
-      font-family: 'Syne', sans-serif;
-    }
+    #visitor-count { color: var(--teal); font-weight: 600; }
 
     @media (max-width: 600px) {
       .header-inner, main { padding: 0 20px; }
-      header { padding: 36px 0 28px; }
+      header { padding: 28px 0 20px; }
       .skills-grid { grid-template-columns: 1fr; }
-      .job-header { flex-direction: column; }
     }
   </style>
 </head>
@@ -319,21 +301,23 @@
 <header>
   <div class="header-inner">
     <div class="name">Tevfik Koyun</div>
-    <div class="title">Network &amp; Cloud Infrastructure Engineer</div>
+    <div class="title">Infrastructure & Cloud Engineer</div>
 
     <div class="contact-row">
-      <span>📍 Totowa, NJ</span>
-      <span class="dot">·</span>
-      <a href="mailto:tevfikkoyun@email.com">tevfikkoyun@email.com</a>
-      <span class="dot">·</span>
-      <a href="https://linkedin.com/in/tevfikkoyun" target="_blank">linkedin.com/in/tevfikkoyun</a>
-      <span class="dot">·</span>
+      <span>Totowa, NJ</span>
+      <span>·</span>
+      <a href="mailto:tevfikkoyun97@gmail.com">tevfikkoyun97@gmail.com</a>
+      <span>·</span>
+      <a href="https://www.linkedin.com/in/tevfik-koyun/" target="_blank">linkedin.com/in/tevfik-koyun</a>
+      <span>·</span>
       <a href="https://github.com/tevfikkoyun" target="_blank">github.com/tevfikkoyun</a>
     </div>
 
-    <div class="badges">
+    <div class="cert-strip">
+      <span class="cert-strip-label">Certifications</span>
       <span class="badge">Cisco CCNA</span>
       <span class="badge">AWS SAA-C03</span>
+      <span class="badge">IBM AI Fundamentals</span>
       <span class="badge teal">B.S. Computer Science · UCF</span>
     </div>
   </div>
@@ -341,16 +325,11 @@
 
 <main>
 
-  <!-- SUMMARY -->
+  <!-- PROFILE -->
   <section>
     <div class="section-label">Profile</div>
     <p class="summary-text">
-      IT professional with 4.5+ years of hands-on infrastructure experience across network engineering,
-      cloud, and systems administration. Strong foundation in physical infrastructure — multi-VLAN network
-      design, IP camera systems, data room buildouts — combined with a growing cloud and DevOps skill set
-      built through deliberate project work. Certified in Cisco CCNA and AWS Solutions Architect – Associate,
-      with a B.S. in Computer Science from UCF. Recently focused on containerization, Kubernetes orchestration,
-      and infrastructure as code, deploying production-style workloads on AWS using Terraform, Docker, and EKS.
+      IT professional with 4.5+ years of hands-on infrastructure experience across network engineering, cloud, and systems administration. Strong foundation in physical infrastructure — multi-VLAN network design, IP camera systems, data room buildouts — combined with a growing cloud and DevOps skill set built through deliberate project work. Certified in Cisco CCNA and AWS Solutions Architect – Associate, with a B.S. in Computer Science from UCF. Recently focused on containerization, Kubernetes orchestration, and infrastructure as code, deploying production-style workloads on AWS using Terraform, Docker, and EKS.
     </p>
   </section>
 
@@ -359,32 +338,28 @@
     <div class="section-label">Technical Skills</div>
     <div class="skills-grid">
       <div class="skill-row">
-        <span class="skill-label">Networking</span>
-        <span class="skill-value">Cisco IOS · VLAN Design · Inter-VLAN Routing · STP/RSTP · WLC · 802.11 Wi-Fi · TCP/IP</span>
-      </div>
-      <div class="skill-row">
         <span class="skill-label">Cloud (AWS)</span>
-        <span class="skill-value">EC2 · S3 · CloudFront · VPC · IAM · Lambda · DynamoDB · API Gateway · ECR · EKS · RDS · CloudWatch · Route 53</span>
+        <span class="skill-value">EC2 · S3 · VPC · IAM · EKS · ECR · Lambda · DynamoDB · CloudFront · RDS · CloudWatch · Route 53</span>
       </div>
       <div class="skill-row">
         <span class="skill-label">Infrastructure as Code</span>
-        <span class="skill-value">Terraform · AWS Provider · Remote State · Modules · EKS Provisioning</span>
+        <span class="skill-value">Terraform · AWS Provider · Modules · Remote State · EKS Provisioning</span>
       </div>
       <div class="skill-row">
         <span class="skill-label">Containers & Orchestration</span>
-        <span class="skill-value">Docker · Docker Compose · Kubernetes · kubectl · Kustomize · Helm (basic) · Deployments · Services · Ingress · HPA</span>
+        <span class="skill-value">Docker · Kubernetes · Helm · Kustomize · kubectl · HPA · Ingress · Probes</span>
       </div>
       <div class="skill-row">
-        <span class="skill-label">CI/CD & Development</span>
-        <span class="skill-value">GitHub Actions · Python · Node.js · REST APIs · HTML/CSS · JavaScript · MySQL · PostgreSQL</span>
+        <span class="skill-label">CI/CD & Observability</span>
+        <span class="skill-value">GitHub Actions · Prometheus · Grafana · AlertManager · CloudWatch · SNS</span>
       </div>
       <div class="skill-row">
-        <span class="skill-label">Systems & Security</span>
-        <span class="skill-value">Active Directory · Group Policy · Windows Server · Linux · Google Workspace · IP Camera Systems · Access Control</span>
+        <span class="skill-label">Networking</span>
+        <span class="skill-value">Cisco IOS · VLAN Design · Inter-VLAN Routing · STP/RSTP · WLC · 802.11 · TCP/IP</span>
       </div>
       <div class="skill-row">
-        <span class="skill-label">Hardware & Physical Infra</span>
-        <span class="skill-value">Cisco Switches · Core Switches · Server Rack Buildouts · Structured Cabling · UPS Infrastructure</span>
+        <span class="skill-label">Systems & Dev</span>
+        <span class="skill-value">Active Directory · Linux · Windows Server · Python · Node.js · PostgreSQL · MySQL</span>
       </div>
     </div>
   </section>
@@ -392,118 +367,70 @@
   <!-- EXPERIENCE -->
   <section>
     <div class="section-label">Experience</div>
-
     <div class="job">
       <div class="job-header">
-        <span class="job-title">Network &amp; IT Infrastructure Engineer</span>
-        <span class="job-dates">2022 – Present</span>
+        <span class="job-title">Network & IT Infrastructure Engineer</span>
+        <span class="job-dates">2022 – 2026</span>
       </div>
-      <div class="job-company">Company Name · NJ/NY Area</div>
-
-      <div class="sub-section">Network Infrastructure</div>
+      <div class="job-company">Confidential · NJ/NY Area</div>
       <ul class="bullets">
-        <li>Designed and managed full network infrastructure for a 500–750 user enterprise environment across multiple sites</li>
-        <li>Built a multi-VLAN architecture from scratch — separating camera, wireless, and data traffic with dedicated IP schemes and inter-VLAN policies per segment</li>
-        <li>Led a network redesign and upgrade initiative, improving performance, redundancy, and long-term scalability</li>
-        <li>Deployed and configured Cisco switches across sites, including core switch installations with full L2/L3 setup</li>
-        <li>Rolled out ~50 Access Points integrated with WLC — handled RF planning, configuration, and ongoing optimization</li>
-      </ul>
-
-      <div class="sub-section">Physical Security Systems</div>
-      <ul class="bullets">
-        <li>Deployed and maintained a large-scale IP camera system (~150 cameras) — IP addressing, VLAN assignment, and all ongoing changes</li>
-        <li>Built and maintained the camera server environment; consolidated servers to reduce footprint</li>
-        <li>Installed UPS systems and implemented smart door and electronic access control across multiple facilities</li>
-      </ul>
-
-      <div class="sub-section">Data Center & Systems</div>
-      <ul class="bullets">
+        <li>Designed and managed full network infrastructure for a 500–750 user enterprise environment across multiple sites — VLAN segmentation, inter-VLAN routing, and site connectivity</li>
+        <li>Deployed and configured Cisco switches (including 2 core switches) with full L2/L3 setup; rolled out ~50 Access Points integrated with WLC — RF planning, configuration, and optimization</li>
+        <li>Built and maintained a large-scale IP camera system (~150 cameras) — IP addressing, VLAN assignment, and server consolidation across facilities</li>
         <li>Planned and built 4 server rooms from the ground up — rack layout, structured cabling, hardware installation, and power infrastructure</li>
-        <li>Administered Active Directory including user/group management, GPO policies, and security hardening</li>
-        <li>Managed Google Workspace Admin for provisioning, device management, and org-wide security settings</li>
+        <li>Administered Active Directory (user/group management, GPO, security hardening) and Google Workspace for org-wide provisioning and device management</li>
       </ul>
     </div>
   </section>
 
   <!-- PROJECTS -->
   <section>
-    <div class="section-label">Projects</div>
+    <div class="section-label">Projects — <a href="https://github.com/tevfikkoyun" target="_blank" style="color:var(--accent);font-size:0.75rem;font-weight:400;text-decoration:none;letter-spacing:0;">All projects documented with dependency map at github.com/tevfikkoyun</a></div>
 
-    <div class="project-card">
-      <div class="project-title">Fullstack K8s AWS — Final Master Project</div>
-      <div class="project-sub">Terraform · AWS EKS · Docker · Kubernetes · ECR · GitHub Actions CI/CD · HPA</div>
-      <ul class="bullets">
-        <li>Provisioned a production-style AWS EKS cluster using Terraform — VPC, node groups, IAM roles, ECR repositories, and ALB Ingress Controller</li>
-        <li>Deployed a full-stack application (React + Node.js + PostgreSQL) to EKS using Kubernetes manifests — Deployments, Services, Ingress, ConfigMaps, Secrets, PVC, Probes, and HPA</li>
-        <li>Built a GitHub Actions CI/CD pipeline pushing images to ECR on every commit and rolling out updates to the cluster automatically</li>
-      </ul>
+    <div class="project-item">
+      <div class="project-header">
+        <span class="project-title">Fullstack K8s AWS — Final Master Project</span>
+        <a href="https://github.com/tevfikkoyun/fullstack-k8s-aws" target="_blank" class="project-link">↗ GitHub</a>
+      </div>
+      <div class="project-sub">Terraform · AWS EKS · Docker · Kubernetes · ECR · GitHub Actions · Prometheus · Grafana</div>
+      <div class="project-desc">Provisioned EKS cluster with Terraform (VPC, IAM, ECR, OIDC, EBS CSI, ALB Ingress); deployed full-stack app via K8s manifests (Deployments, Ingress, PVC, HPA, Probes); GitHub Actions CI/CD to ECR on every commit; Prometheus + Grafana with custom alert rules — real-time alert firing demonstrated under load.</div>
     </div>
 
-    <div class="project-card">
-      <div class="project-title">Kubernetes Task Manager</div>
-      <div class="project-sub">Kubernetes · Docker · Ingress · ConfigMap · Secret · PVC · HPA · Liveness & Readiness Probes</div>
-      <ul class="bullets">
-        <li>Migrated a Dockerized full-stack Task Manager (React + Node.js + PostgreSQL + Nginx) from Docker Compose to a complete set of Kubernetes manifests</li>
-        <li>Applied every core K8s concept: Deployments, ClusterIP Services, Ingress path routing, ConfigMaps, Secrets, PersistentVolumeClaim for database storage, liveness/readiness probes, resource limits, and HPA for backend autoscaling</li>
-      </ul>
-    </div>
-
-    <div class="project-card">
-      <div class="project-title">Kubernetes Multi-Environment Deployment</div>
-      <div class="project-sub">Kubernetes · Kustomize · Namespace Isolation · Multi-Environment IaC</div>
-      <ul class="bullets">
-        <li>Built a Kustomize base+overlay pattern to deploy the same application to dev and production namespaces with different replica counts, resource limits, log levels, and autoscaling configuration</li>
-        <li>Dev: 1 replica, 64Mi limit, debug logging. Production: 3 replicas, 256Mi limit, HPA (3–8 replicas), info logging — all from a single shared base</li>
-      </ul>
-    </div>
-
-    <div class="project-card">
-      <div class="project-title">Fullstack AWS Deployment</div>
-      <div class="project-sub">Terraform · AWS EC2 · ECR · VPC · IAM · Docker · Docker Compose · GitHub Actions</div>
-      <ul class="bullets">
-        <li>Provisioned AWS infrastructure with Terraform — VPC, public subnet, security group, EC2 (Amazon Linux 2023), two ECR repositories, and IAM Role for EC2-to-ECR authentication without stored credentials</li>
-        <li>Deployed a Dockerized full-stack application to EC2 via Docker Compose pulling images from ECR</li>
-        <li>Extended GitHub Actions CI/CD pipeline to push images to both Docker Hub and ECR in parallel (4 jobs)</li>
-      </ul>
-    </div>
-
-    <div class="project-card">
-      <div class="project-title">Hybrid Infrastructure Platform</div>
+    <div class="project-item">
+      <div class="project-header">
+        <span class="project-title">Hybrid Infrastructure Platform</span>
+        <a href="https://github.com/tevfikkoyun/hybrid-infra-platform" target="_blank" class="project-link">↗ GitHub</a>
+      </div>
       <div class="project-sub">Terraform · AWS VPC · EC2 · RDS MySQL · Node.js · CloudWatch · SNS · GitHub Actions</div>
-      <ul class="bullets">
-        <li>Designed and provisioned a multi-tier AWS VPC — public/private subnets across two AZs, NAT Gateway, bastion host, private app server, and RDS MySQL in private subnet</li>
-        <li>Built a Node.js/Express CRUD REST API (device inventory) on EC2 connected to RDS, deployed via GitHub Actions</li>
-        <li>Configured CloudWatch dashboards with SNS email alerts for CPU, memory, and database metrics</li>
-      </ul>
+      <div class="project-desc">Multi-tier VPC with public/private subnets across two AZs, NAT Gateway, bastion host, RDS MySQL in private subnet; Node.js REST API on EC2; CloudWatch dashboards with SNS alerts; GitHub Actions CI/CD.</div>
     </div>
 
-    <div class="project-card">
-      <div class="project-title">Dockerized Fullstack Platform</div>
-      <div class="project-sub">Docker · Docker Compose · Node.js · React · PostgreSQL · Nginx · GitHub Actions · Docker Hub</div>
-      <ul class="bullets">
-        <li>Built a multi-container full-stack application (React + Node.js/Express + PostgreSQL + Nginx reverse proxy) orchestrated with Docker Compose</li>
-        <li>Applied production Docker practices: multi-stage builds, non-root users, health checks, named volumes, custom networks, and environment-based secrets management</li>
-        <li>Automated image builds and pushes to Docker Hub via GitHub Actions (4 parallel jobs for backend and frontend)</li>
-      </ul>
+    <div class="project-item">
+      <div class="project-header">
+        <span class="project-title">Kubernetes Task Manager</span>
+        <a href="https://github.com/tevfikkoyun/kubernetes-task-manager" target="_blank" class="project-link">↗ GitHub</a>
+      </div>
+      <div class="project-sub">Kubernetes · Docker · Ingress · ConfigMap · Secret · PVC · HPA · Probes</div>
+      <div class="project-desc">Full-stack app (React + Node.js + PostgreSQL) migrated from Docker Compose to production-grade K8s manifests — all core concepts applied. Fulfills the Kubernetes Resume Challenge.</div>
     </div>
 
-    <div class="project-card">
-      <div class="project-title">Cloud Resume Challenge</div>
-      <div class="project-sub">AWS · S3 · CloudFront · Lambda · DynamoDB · API Gateway · Terraform · GitHub Actions · Python</div>
-      <ul class="bullets">
-        <li>Built and deployed a serverless resume website on AWS — static frontend hosted on S3, served globally via CloudFront with HTTPS</li>
-        <li>Implemented a live visitor counter using API Gateway → Lambda (Python/boto3) → DynamoDB serverless architecture</li>
-        <li>Provisioned all infrastructure as code with Terraform; automated deployments via GitHub Actions CI/CD pipelines</li>
-      </ul>
+    <div class="project-item">
+      <div class="project-header">
+        <span class="project-title">Fullstack AWS Deployment</span>
+        <a href="https://github.com/tevfikkoyun/fullstack-aws-deployment" target="_blank" class="project-link">↗ GitHub</a>
+      </div>
+      <div class="project-sub">Terraform · EC2 · ECR · VPC · IAM · Docker Compose · GitHub Actions</div>
+      <div class="project-desc">Terraform-provisioned AWS infrastructure; Dockerized app on EC2 pulling from ECR; GitHub Actions CI/CD pushing to Docker Hub and ECR in parallel.</div>
     </div>
 
-    <div class="project-card">
-      <div class="project-title">Veterans Cemetery Database & Admin Web System</div>
-      <div class="project-sub">UCF Capstone · Back-End Developer · MySQL · phpMyAdmin · PHP · REST API · OCR · GPS</div>
-      <ul class="bullets">
-        <li>Designed and maintained a MySQL relational database for soldier records, GPS coordinates, and headstone data</li>
-        <li>Built an administrative web application for authorized database management and integrated OCR and GPS/navigation APIs</li>
-      </ul>
+    <div class="project-item">
+      <div class="project-header">
+        <span class="project-title">Cloud Resume Challenge</span>
+        <a href="https://github.com/tevfikkoyun/cloud-resume" target="_blank" class="project-link">↗ GitHub</a>
+        <a href="https://d108sjaxcdd5os.cloudfront.net/" target="_blank" class="project-link">↗ Live</a>
+      </div>
+      <div class="project-sub">S3 · CloudFront · Lambda · DynamoDB · API Gateway · Terraform · GitHub Actions</div>
+      <div class="project-desc">Serverless resume on AWS — S3 + CloudFront HTTPS, visitor counter via API Gateway → Lambda (Python) → DynamoDB; all infrastructure as Terraform code, automated via GitHub Actions.</div>
     </div>
 
   </section>
@@ -511,7 +438,7 @@
   <!-- EDUCATION -->
   <section>
     <div class="section-label">Education</div>
-    <div class="edu-row" style="margin-bottom: 16px;">
+    <div class="edu-row">
       <div>
         <div class="edu-degree">Bachelor of Science – Computer Science</div>
         <div class="edu-school">University of Central Florida (UCF) · Orlando, FL</div>
@@ -527,7 +454,6 @@
     </div>
   </section>
 
-  <!-- VISITOR COUNTER -->
   <div class="visitor-bar">
     👁 This page has been visited <span id="visitor-count">—</span> times
   </div>
