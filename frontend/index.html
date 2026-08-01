@@ -3,10 +3,6 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Tevfik Koyun — Infrastructure &amp; Cloud Engineer based in New Jersey. AWS SAA-C03, Cisco CCNA certified. Skilled in Terraform, Kubernetes, Docker, and AWS EKS."/>
-  <meta property="og:title" content="Tevfik Koyun – Infrastructure &amp; Cloud Engineer"/>
-  <meta property="og:type" content="website"/>
-  <link rel="icon" href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'&gt;&lt;text y='.9em' font-size='90'&gt;⚙️&lt;/text&gt;&lt;/svg&gt;"/>
   <title>Tevfik Koyun – Infrastructure & Cloud Engineer</title>
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
   <style>
@@ -43,6 +39,14 @@
       max-width: 860px;
       margin: 0 auto;
       padding: 0 40px;
+    }
+
+    .name-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 12px;
     }
 
     .name {
@@ -300,12 +304,13 @@
       background: rgba(46,125,233,0.12);
       border: 1px solid rgba(46,125,233,0.35);
       border-radius: 5px;
-      padding: 5px 14px;
+      padding: 8px 16px;
       font-size: 0.8rem;
       font-weight: 500;
       color: #7eb8f7;
       text-decoration: none;
-      margin-top: 12px;
+      align-self: flex-start;
+      white-space: nowrap;
       transition: background 0.2s;
     }
     .btn-download:hover { background: rgba(46,125,233,0.22); color: #fff; }
@@ -321,8 +326,13 @@
 
 <header>
   <div class="header-inner">
-    <div class="name">Tevfik Koyun</div>
-    <div class="title">Infrastructure & Cloud Engineer</div>
+    <div class="name-row">
+      <div>
+        <div class="name">Tevfik Koyun</div>
+        <div class="title">Infrastructure & Cloud Engineer</div>
+      </div>
+      <a href="https://tevfik-koyun-resume.s3.amazonaws.com/Tevfik_Koyun_Resume.pdf" target="_blank" rel="noopener noreferrer" class="btn-download">⬇ Download Resume</a>
+    </div>
 
     <div class="contact-row">
       <span>Totowa, NJ</span>
@@ -339,10 +349,12 @@
       <span class="badge">Cisco CCNA</span>
       <span class="badge">AWS SAA-C03</span>
       <span class="badge">IBM AI Fundamentals</span>
-      <span class="cert-strip-label" style="margin-left:8px;">Education</span>
-      <span class="badge teal">B.S. Computer Science · UCF</span>
     </div>
-    <a href="https://tevfik-koyun-resume.s3.amazonaws.com/Tevfik_Koyun_Resume.pdf" target="_blank" rel="noopener noreferrer" class="btn-download">⬇ Download Resume PDF</a>
+    <div class="cert-strip" style="margin-top:6px;">
+      <span class="cert-strip-label">Education</span>
+      <span class="badge teal">B.S. Computer Science · UCF</span>
+      <span class="badge teal">A.S. General Science · Bergen CC</span>
+    </div>
   </div>
 </header>
 
@@ -398,7 +410,7 @@
       <div class="job-company">Private Education Organization · New Jersey</div>
       <ul class="bullets">
         <li>Contributed to the design and deployment of network infrastructure for a 500–750 user enterprise environment across multiple sites; led ongoing maintenance and day-to-day operations post-deployment</li>
-        <li>Deployed and configured Cisco switches (including 2 core switches) with full L2/L3 setup; rolled out ~50 Access Points integrated with WLC — RF planning, configuration, and ongoing optimization</li>
+        <li>Deployed and configured Cisco switches (including 2 core switches) with full L2/L3 setup; rolled out ~50 Access Points integrated with WLC — wireless coverage planning, AP placement, WLC configuration, and ongoing optimization</li>
         <li>Maintained a large-scale IP camera system (~150 cameras) — IP addressing, VLAN assignment, and consolidated camera servers to reduce infrastructure footprint</li>
         <li>Participated in planning and building 4 server rooms from the ground up — rack layout, structured cabling, hardware installation, and power infrastructure</li>
         <li>Administered Active Directory (user/group management, GPO, security hardening) and Google Workspace for org-wide provisioning and device management</li>
@@ -409,7 +421,7 @@
 
   <!-- PROJECTS -->
   <section>
-    <div class="section-label">Projects — <a href="https://github.com/tevfikkoyun" target="_blank" rel="noopener noreferrer" style="color:var(--accent);font-size:0.75rem;font-weight:400;text-decoration:none;letter-spacing:0;">All projects documented with dependency map at github.com/tevfikkoyun</a></div>
+    <div class="section-label">Projects — <a href="https://github.com/tevfikkoyun" target="_blank" rel="noopener noreferrer" style="color:var(--accent);font-size:0.75rem;font-weight:400;text-decoration:none;letter-spacing:0;">View portfolio roadmap &amp; dependency map on GitHub ↗</a></div>
 
     <div class="project-item">
       <div class="project-header">
@@ -435,7 +447,7 @@
         <a href="https://github.com/tevfikkoyun/kubernetes-task-manager" target="_blank" rel="noopener noreferrer" class="project-link">↗ GitHub</a>
       </div>
       <div class="project-sub">Kubernetes · Docker · Ingress · ConfigMap · Secret · PVC · HPA · Probes</div>
-      <div class="project-desc">Full-stack app (React + Node.js + PostgreSQL) migrated from Docker Compose to production-style K8s manifests — all core concepts applied. Fulfills the Kubernetes Resume Challenge.</div>
+      <div class="project-desc">Full-stack app (React + Node.js + PostgreSQL) migrated from Docker Compose to production-style K8s manifests — all core concepts applied. Independently implements the core technical requirements of the Kubernetes Resume Challenge.</div>
     </div>
 
     <div class="project-item">
